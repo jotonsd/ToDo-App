@@ -1,3 +1,4 @@
+/*footer design*/
 .footer {
   position: fixed;
   padding: 20px 0;
@@ -9,7 +10,7 @@
   left: 0px;
   right: 0px;
   margin-bottom: 0px;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: #F2F2F2;
 }
 .footer .copyright {
   text-align: center;
@@ -21,4 +22,18 @@
   text-align: center;
   font-size: 16px;
   color: #012970;
+}
+
+/*textarea word count*/
+#the-count {
+  float: right;
+  padding: 0.1rem 0 0 0;
+  font-size: 0.875rem;
+}
+
+/*btn-sm design modification*/
+.btn-sm, .btn-group-sm > .btn {
+    padding: 0.1rem 0.3rem;
+    font-size: 0.875rem;
+    border-radius: 0.2rem;
 }

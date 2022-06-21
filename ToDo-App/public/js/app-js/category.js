@@ -1,6 +1,6 @@
 $(function () {
   // get categories onload
-    $.get("http://localhost:8000/api/task/get-categories/"+ user_id, function(data){
+    $.get("http://localhost:8000/api/get-categories/"+ user_id, function(data){
 
       // calling function for table data
       table_reload(data);

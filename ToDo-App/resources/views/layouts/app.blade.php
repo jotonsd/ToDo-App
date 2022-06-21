@@ -52,7 +52,7 @@
     <div id="app">        
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <div class="container-fluid mx-3">
-            <a class="navbar-brand" href="{{ route('welcome') }}"><img width="30" src="{{ asset('logo.png') }}"> {{ config('app.name') }}</a>
+            <a class="navbar-brand" href="{{ Auth::user()? route('home'):route('welcome') }}"><img width="30" src="{{ asset('logo.png') }}"> {{ config('app.name') }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -63,13 +63,7 @@
                 @else                
                   <li class="nav-item">
                     <a class="nav-link {{ Str::startsWith(Route::current()->uri, 'home') ? 'active' : '' }}" href="{{ route('home') }}">List</a>
-                  </li>             
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Pinned</a>
                   </li>          
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Important</a>
-                  </li>         
                   <li class="nav-item">
                     <a class="nav-link {{ Str::startsWith(Route::current()->uri, 'categories') ? 'active' : '' }}" href="{{ route('categories') }}">Category</a>
                   </li>

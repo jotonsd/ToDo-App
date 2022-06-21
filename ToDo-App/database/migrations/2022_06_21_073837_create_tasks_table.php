@@ -16,11 +16,12 @@ class CreateTasksTable extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('category_id');
             $table->string('title');
-            $table->text('description');
-            $table->tinyInteger('is_pinned');
-            $table->tinyInteger('is_important');
-            $table->tinyInteger('is_completed');
+            $table->text('description')->nullable();
+            $table->tinyInteger('is_pinned')->nullable();
+            $table->tinyInteger('is_important')->nullable();
+            $table->tinyInteger('is_completed')->nullable();
             $table->timestamps();
         });
     }

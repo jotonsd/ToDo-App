@@ -35,7 +35,7 @@
       <form method="POST" id="myform" autocomplete="off" novalidate>
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalToggleLabel">Add New Category</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" onclick="clear_all()" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="row mb-2">

@@ -49,6 +49,7 @@ class CategoryController extends BaseController
         return $this->sendResponse($success, 'Category get successfully successfully.');
     }
 
+    // update category
     public function update(Request $request,$id)
     {
         $validator = Validator::make($request->all(), [

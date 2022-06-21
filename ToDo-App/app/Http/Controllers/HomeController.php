@@ -32,5 +32,16 @@ class HomeController extends Controller
         return view('categories');
     }
 
+    // call the pinned tasks page
+    public function pinned()
+    {
+        return view('pinned');
+    }
+
+    // call the important tasks page
+    public function important()
+    {
+        return view('important');
+    }
     
 }
