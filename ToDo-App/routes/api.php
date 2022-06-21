@@ -22,5 +22,14 @@ use App\Http\Controllers\API\PassportAuthController;
 Route::post('register', [PassportAuthController::class, 'register']);
 Route::post('login', [PassportAuthController::class, 'login']);
 
+// category api's
+Route::get('/get-categories/{user_id}', [CategoryController::class, 'get']);
 Route::post('/store-categories', [CategoryController::class, 'store']);
-Route::get('/get-categories', [CategoryController::class, 'get']);
+Route::get('/get-category/{id}', [CategoryController::class, 'get_category_by_id']);
+Route::post('/update-category/{id}', [CategoryController::class, 'update']);
+
+// category api's
+Route::get('/get-tasks/{user_id}', [TaskController::class, 'get']);
+Route::post('/store-tasks', [TaskController::class, 'store']);
+Route::get('/get-task/{id}', [TaskController::class, 'get_task_by_id']);
+Route::post('/update-task/{id}', [TaskController::class, 'update']);

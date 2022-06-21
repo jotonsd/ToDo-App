@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <div class="d-flex justify-content-between">{{ __('Your to do list') }}
+                    <div class="d-flex justify-content-between">{{ __('Category List') }}
                         <button class="btn-sm btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button"><i class="fa fa-plus" aria-hidden="true"></i> Add new</button>
                     </div>
                 </div>
@@ -44,6 +44,7 @@
               <div class="col-md-6">
                   <input id="name" type="text" class="form-control" name="name" placeholder="Enter category name..." autofocus required>
                   <input id="user_id" type="text" value="{{ Auth::id() }}" name="user_id" hidden>
+                  <input id="id" type="text" value="0" hidden>
               </div>
           </div>
 
@@ -60,74 +61,15 @@
           </div>
         </div>
         <div class="modal-footer justify-content-center">
-          <button id="submit" class="btn btn-primary"><i class="fa fa-save" aria-hidden="true"></i> Save</button>
-          <button class="btn btn-danger" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
+          <button id="submit" class="btn btn-primary"><i class="fa fa-save" aria-hidden="true"></i> <span id="btn-name">Save</span></button>
+          <button class="btn btn-danger" onclick="clear_all()" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
         </div>      
       </form>
     </div>
   </div>
 </div>
-<script>
-    $(function () {
-      // get categories onload
-        $.get("http://localhost:8000/api/get-categories", function(data){
-          $(data).each(function(index) {
-              if (data[index].status == 1) {
-                status = "<button class='btn-sm btn-success'>Actived</button>";
-              }else{                        
-                status = "<button class='btn-sm btn-danger'>Deactived</button>";
-              }
-              html ="<tr>"+
-                    "<td>"+(index+1)+"</td>"+
-                    "<td>"+data[index].name+"</td>"+
-                    "<td>"+status+"</td>"+
-                    "<td><button data-id='"+data[index].id+"' class='btn-sm btn-primary edit-btn'>Edit</button></td>"+
-                    "</tr>"
-                $('#table-data tbody').append(html);
-            });
-        });
-
-        // from validation
-        let validatorServerSide = $('form#myform').jbvalidator({
-            errorMessage: true,
-            successClass: true,
-        });
-
-        //store categories
-        $(document).on('submit', '#myform', function () {
-
-            $.ajax({
-                method: "POST",
-                url: "http://localhost:8000/api/store-categories",         
-                data: $(this).serialize(),
-                success: function (response) {
-                  if (response.success == true) { 
-                    console.log(response.data); 
-                    $('#table-data tbody').html('');
-                    $(response.data.categories).each(function(index) {
-                      if (response.data.categories[index].status == 1) {
-                        status = "<button class='btn-sm btn-success'>Actived</button>";
-                      }else{                        
-                        status = "<button class='btn-sm btn-danger'>Deactived</button>";
-                      }
-                      html ="<tr>"+
-                            "<td>"+(index+1)+"</td>"+
-                            "<td>"+response.data.categories[index].name+"</td>"+
-                            "<td>"+status+"</td>"+
-                            "<td><button data-id='"+response.data.categories[index].id+"' class='btn-sm btn-primary edit-btn'>Edit</button></td>"+
-                            "</tr>"
-                        $('#table-data tbody').append(html);
-                    });
-                    // sucess alert                      
-                    success('Category stored successfully!')
-                    $('#exampleModalToggle').modal('toggle');
-                    $('#myform')[0].reset();
-                  }
-                }
-            })
-
-            return false;
-        });
-    })
+<script type="text/javascript">
+  var user_id = {!! Auth::id() !!};
 </script>
+<script src="{{ asset('js/app-js/category.js') }}"></script>
 @endsection

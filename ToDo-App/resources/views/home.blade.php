@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="card-body">
-                    <table class="table table-striped table-bordered text-center">
+                    <table class="table table-striped table-bordered text-center" id="table-data">
                       <thead class="table-success">
                         <tr>
                           <th scope="col">#</th>
@@ -22,24 +22,6 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
                       </tbody>
                     </table>
                 </div>
@@ -50,18 +32,44 @@
 <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel">Add New Task</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Show a second modal and hide this one with the button below.
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary"><i class="fa fa-save" aria-hidden="true"></i> Save</button>
-        <button class="btn btn-danger" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
-      </div>
+      <form method="POST" id="myform" autocomplete="off" novalidate>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel">Add New Task</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row mb-2">
+              <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Category Name') }}</label>
+
+              <div class="col-md-6">
+                  <input id="name" type="text" class="form-control" name="name" placeholder="Enter category name..." autofocus required>
+                  <input id="user_id" type="text" value="{{ Auth::id() }}" name="user_id" hidden>
+                  <input id="id" type="text" value="0" hidden>
+              </div>
+          </div>
+
+          <div class="row mb-2">
+              <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Status') }}</label>
+
+              <div class="col-md-6">
+                  <select class="form-select" name="status" id="status" required>
+                    <option value="">Select Status</option>
+                    <option value="1">Active</option>
+                    <option value="0">Deactive</option>
+                  </select>
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button id="submit" class="btn btn-primary"><i class="fa fa-save" aria-hidden="true"></i> <span id="btn-name">Save</span></button>
+          <button class="btn btn-danger" onclick="clear_all()" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
+        </div>      
+      </form>
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  var user_id = {!! Auth::id() !!};
+</script>
+<script src="{{ asset('js/app-js/home.js') }}"></script>
 @endsection

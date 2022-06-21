@@ -84,7 +84,7 @@
 
               <div class="d-flex">
                 <a class="btn btn-success my-2 mx-1 my-sm-0" href="{{ route('home') }}"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{ Auth::user()->name }}</a>
-                <a class="btn btn-danger my-2 my-sm-0"  href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-registered" aria-hidden="true"></i> Logout</a>
+                <a class="btn btn-danger my-2 my-sm-0"  href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                   @csrf
               </form>
