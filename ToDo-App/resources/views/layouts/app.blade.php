@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">    
     <title>{{ config('app.name', 'Laravel') }} - @yield('title')</title>
-    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/x-icon">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -94,7 +94,12 @@
       <!-- ======= Footer ======= -->
         <footer id="footer" class="footer mt-5">
           <div class="copyright  text-dark">
-            &copy; {{ date('Y') }} Copyright Reserved.<strong><a href="http://jotonsutradhar.com/" target="_blank" title="Joton Sutradhar"><span> Joton Sutradhar</span></a></strong>
+            &copy; {{ date('Y') }} Copyright Reserved.<strong><a href="http://jotonsutradhar.com/" target="_blank" title="Joton Sutradhar"><span> Joton Sutradhar.</span></a></strong>&emsp; 
+            <b>Find me</b>: 
+              <a target="_blank" href="https://github.com/jotonsd" class="github f20"><i class="fa fa-github-square"></i></a> 
+              <a target="_blank" href="https://www.linkedin.com/in/joton-sutradhar-b77996196/" class="linkedin f20"><i class="fa fa-linkedin-square f20"></i></a>
+              <a target="_blank" href="https://facebook.com/joton.sutradhar" class="facebook f20"><i class="fa fa-facebook-square f20"></i></a>
+              <a target="_blank" href="https://instagram.com/joton.sutradhar" class="instagram f20"><i class="fa fa-instagram f20"></i></a>
           </div>
         </footer><!-- End Footer -->
     </div>  

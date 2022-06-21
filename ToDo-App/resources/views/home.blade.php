@@ -6,21 +6,21 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <div class="d-flex justify-content-between">
-                      <div class="d-flex">
-                        <b>{{ __('Your to do list') }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div class="d-md-flex justify-content-between">
+                      <div class="d-md-flex">
+                        <b>{{ __('Your to do list') }}</b>&emsp;
                         <div class="form-check">
                           <input class="form-check-input radio-btn" name="get_task" value="1" type="radio" id="get-task" checked>
                           <label class="form-check-label" for="get-task">
                             All
                           </label>
-                        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>&emsp;
                         <div class="form-check">
                           <input class="form-check-input radio-btn" name="get_task" value="2" type="radio" id="get-task-2">
                           <label class="form-check-label" for="get-task-2">
                             Pinned
                           </label>
-                        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>&emsp;
                         <div class="form-check">
                           <input class="form-check-input radio-btn" name="get_task" value="3" type="radio" id="get-task-3">
                           <label class="form-check-label" for="get-task-3">
@@ -82,10 +82,10 @@
           <div class="row mb-2">
               <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Description') }}</label>
               <div class="col-md-6">
-                <textarea class="form-control" id="description" name="description" placeholder="Enter task description" maxlength="300" rows="3"></textarea>
+                <textarea class="form-control" id="description" name="description" placeholder="Enter task description" maxlength="500" rows="3"></textarea>
                 <div id="the-count">
                   <span id="current">0</span>
-                  <span id="maximum">/ 300</span>
+                  <span id="maximum">/ 500</span>
                 </div>
                   <div class="d-md-flex mt-2">
                     <div class="form-check">

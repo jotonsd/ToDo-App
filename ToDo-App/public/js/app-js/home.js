@@ -185,7 +185,11 @@ function clear_all(){
 // reload table data function
 function table_reload(data)
 {      
+  console.log(data)
   $('#table-data tbody').html('');
+  if (data.length == 0) {
+    $('#table-data tbody').append("<tr><td colspan='3'><h4>Welcome to ToDo-App</h4></td></tr>");
+  } else {}
   $(data).each(function(index) {
     // checking important or not
     if (data[index].is_important == 1) {
@@ -228,7 +232,7 @@ $('textarea').keyup(function() {
   
   /*This isn't entirely necessary, just playin around*/
 
-    if (characterCount >= 270) {
+    if (characterCount >= 450) {
       maximum.css('color', '#8f0001');
       current.css('color', '#8f0001');
       theCount.css('font-weight','bold');
