@@ -31,7 +31,7 @@
 ## Demo & Credentials
 Demo Link : https://todo-app.jotonsutradhar.com
 
-Register and use the app
+Register and use the app happyliy!
 
 ## Installation
 In the root folder, find the .env file and change the following values
