@@ -20,13 +20,15 @@
 ```
 
 ## Key Features
-1. Laravel 8+                     
-2. Responsive Design                      
-3. Category Management                     
-4. Task Management                
-5. Manage Pinned Task                  
-5. Manage Important Task                  
-5. Manage Completed Task      
+1. Laravel 8+   
+2. Jquery
+3. API Based App               
+4. Responsive Design                      
+5. Category Management                     
+6. Task Management                
+7. Manage Pinned Task                  
+8. Manage Important Task                  
+9. Manage Completed Task      
 
 ## Demo & Credentials
 Demo Link : https://todo-app.jotonsutradhar.com
