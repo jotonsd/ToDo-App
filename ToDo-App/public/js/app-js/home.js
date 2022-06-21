@@ -172,6 +172,20 @@ function complete(id)
   });
 }
 
+// task not completed function
+function not_complete(id)
+{
+  $.get("http://localhost:8000/api/task-not-complete/"+id+"/"+user_id, function(response){
+    console.log(response);
+    var data = response.data.tasks;
+    // calling function for table data
+    table_reload(data);
+
+    // sucess alert                      
+    success(response.message)
+  });
+}
+
 // clear all from data function
 function clear_all(){
   $('#task_modal').modal('toggle');
@@ -206,7 +220,7 @@ function table_reload(data)
     }
 
     if (data[index].is_completed == 1) {
-      completed = ' <span style="float:right" class="badge bg-success"><i class="fa fa-check-circle" aria-hidden="true"></i> Completed</span> ';
+      completed = ' <span style="float:right; cursor:pointer"  onclick="not_complete(' + data[index].id + ')" class="badge bg-success"><i class="fa fa-check-circle" aria-hidden="true"></i> Completed</span> ';
     }else{
       completed = ' <span style="float:right; cursor:pointer" onclick="complete(' + data[index].id + ')" class="badge bg-info"><i class="fa fa-question-circle" aria-hidden="true"></i> Completed</span> ';
     }

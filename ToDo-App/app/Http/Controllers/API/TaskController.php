@@ -90,6 +90,15 @@ class TaskController extends BaseController
         return $this->sendResponse($success, 'Task completed successfully.');
     }
 
+    // notcomplete task function
+    public function not_complete($id, $user_id)
+    {
+    	$task = Task::where('id',$id)->where('user_id',$user_id)->update(['is_completed'=>0]);
+        $success['tasks'] =  Task::orderBy('is_pinned','desc')->orderBy('id','desc')->where('user_id',$user_id)->get();
+   
+        return $this->sendResponse($success, 'Task updated successfully.');
+    }
+
     //get pinned tasks 
     public function pinned_tasks($user_id)
     {

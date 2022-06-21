@@ -21,10 +21,10 @@ use App\Http\Controllers\API\TaskController;
 //     return $request->user();
 // });
 
+// Route::post('register', [PassportAuthController::class, 'register']);
+// Route::post('login', [PassportAuthController::class, 'login']);
 
-Route::group(['middleware' => ['cors', 'json.response']], function () {
-	Route::post('register', [PassportAuthController::class, 'register']);
-	Route::post('login', [PassportAuthController::class, 'login']);
+// Route::group(['middleware' => ['cors', 'json.response']], function () {
 
 	// category api's
 	Route::get('/get-categories/{user_id}', [CategoryController::class, 'get']);
@@ -39,10 +39,11 @@ Route::group(['middleware' => ['cors', 'json.response']], function () {
 	Route::get('/get-task/{id}', [TaskController::class, 'get_task_by_id']);
 	Route::post('/update-task/{id}', [TaskController::class, 'update']);
 	Route::get('/task-complete/{id}/{user_id}', [TaskController::class, 'complete']);
+	Route::get('/task-not-complete/{id}/{user_id}', [TaskController::class, 'not_complete']);
 
 	//pinned tasks api's
 	Route::get('/get-pinned-tasks/{user_id}', [TaskController::class, 'pinned_tasks']);
 
 	//important tasks api's
 	Route::get('/get-important-tasks/{user_id}', [TaskController::class, 'important_tasks']);
-});
+// });

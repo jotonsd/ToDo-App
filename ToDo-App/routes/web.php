@@ -19,5 +19,6 @@ Route::get('/', function () {
 })->name('welcome');
 
 Auth::routes();
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/categories', [HomeController::class, 'categories'])->name('categories');
