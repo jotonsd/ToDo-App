@@ -1,6 +1,6 @@
 
 <p align="center">
-  <a href="https://jotonsutradhar.com"><img width="150" src="https://todo-app.jotonsutradhar.com/logo.png" alt="Joton Sutradhar">ToDo-App</a>
+  <a href="https://jotonsutradhar.com"><img width="150" src="https://todo-app.jotonsutradhar.com/logo.png" alt="Joton Sutradhar"></a>
 </p>
 
 * [About ToDo-App](#about-ToDo-App)
