@@ -24,12 +24,12 @@
 2. Responsive Design                      
 3. Category Management                     
 4. Task Management                
-5. Pinned Task                  
-5. Important Task                  
-5. Completed Task      
+5. Manage Pinned Task                  
+5. Manage Important Task                  
+5. Manage Completed Task      
 
 ## Demo & Credentials
-Demo Link : https://www.ulearnpro.com/demo/
+Demo Link : https://todo-app.jotonsutradhar.com
 
 Register and use the app
 
@@ -57,7 +57,7 @@ php artisan migrate
 
 
 ## Support
-For contribution and customisation supports, kindly contact us through the Email ID ulearnpro@gmail.com
+For contribution and customisation supports, kindly contact us through the Email ID jotonsutradharjoy@gmail.com
 
 ## License
 ULEARN is open-source software licensed under the [MIT License](LICENSE).
