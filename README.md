@@ -12,7 +12,7 @@
 
 ## About ToDo-App
 
-<a href="[#](https://todo-app.jotonsutradhar.com)">ToDo-App</a> is an impressive Task Management script which comprises of all the basic features that needed for keep daily task. This package includes responsive welcome page, user dashboard. User can manage their every task with this system.
+<a href="https://todo-app.jotonsutradhar.com">ToDo-App</a> is an impressive Task Management script which comprises of all the basic features that needed for keep daily task. This package includes responsive welcome page, user dashboard. User can manage their every task with this system.
 
 ```diff
 + Requests: 
