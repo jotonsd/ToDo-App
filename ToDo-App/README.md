@@ -1,6 +1,6 @@
 
 <p align="center">
-  <a href="https://ko-fi.com/G2G311PPB"><img src="https://www.ko-fi.com/img/githubbutton_sm.svg" alt="ko-fi"></a>
+  <a href="https://jotonsutradhar.com"><img src="https://jotonsutradhar.com/assets/frontend/images/logo-new.png" alt="Joton Sutradhar"></a>
 </p>
 
 * [About ToDo-App](#about-ToDo-App)
@@ -60,4 +60,4 @@ php artisan migrate
 For contribution and customisation supports, kindly contact us through the Email ID jotonsutradharjoy@gmail.com
 
 ## License
-ULEARN is open-source software licensed under the [MIT License](LICENSE).
+ToDo-App is open-source software licensed under the [MIT License](LICENSE).
